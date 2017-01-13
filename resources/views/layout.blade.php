@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,11 +9,27 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="">
+
     <title>Starter Template for Bootstrap</title>
+
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
+    <script src="{{asset('js/app.js')}}"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
-    <style>body{  margin-top: 60px;  }</style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('select').select2();
+            $('#search select').change(function(){
+                $('#search').submit();
+            });
+        });
+    </script>
+    <style>
+        body{
+            margin-top: 60px;
+        }
+    </style>
 
 </head>
 
@@ -34,10 +51,6 @@
 <div class="container">
     @yield('content')
 </div>
-<script src="{{asset('js/app.js')}}"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
-@yield('scripts')
+
 </body>
 </html>

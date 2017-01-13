@@ -5,20 +5,23 @@ namespace App\Providers;
 use App\Http\ViewComposer\MakeModelForm;
 use Illuminate\Support\ServiceProvider;
 
-class AppServiceProvider extends ServiceProvider
+class ViewServiceProvider extends ServiceProvider
 {
     /**
-     * Bootstrap any application services.
+     * Bootstrap the application services.
      *
      * @return void
      */
     public function boot()
     {
-        //
+        $this->app->make('view')->composer(
+            ['components/*'],
+            MakeModelForm::class
+        );
     }
 
     /**
-     * Register any application services.
+     * Register the application services.
      *
      * @return void
      */
