@@ -10,7 +10,8 @@
     <meta name="author" content="">
     <link rel="icon" href="">
 
-    <title>Starter Template for Bootstrap</title>
+    <link rel="icon" type="image/png" href="{{asset('image/lamborghini.png')}}" />
+    <title>Cars</title>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="{{asset('css/app.css')}}">

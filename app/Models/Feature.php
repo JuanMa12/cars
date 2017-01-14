@@ -20,9 +20,13 @@ class Feature extends Model
         $features = array_filter($features,function($value){
             return !is_numeric($value);
         });
-        $features = array_unique($features);
-        array_walk($features,'trim');
+        //validate space
+        $features = array_map('trim',$features);
 
+        //validate unique
+        $features = array_unique($features);
+
+        //validate minimum two characters
         $features = array_filter($features, function($value){
             return strlen($value) > + 2;
         });
