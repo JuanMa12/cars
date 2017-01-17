@@ -16,10 +16,15 @@ Route::get('/bootstrap', function () {return view('bootstrap');});
 Route::get('/dropdowns', function () {return view('components/dropdowns');});
 Route::get('/jquery', function () {return view('components/jquery');});
 Route::get('/autocomplete/demo', function () {return view('components/demo');});
+Route::get('/autocomplete', function () {return view('components/autocomplete');});
 
 Route::get('/makeyears/{make_id}','CarController@makeYear');
 Route::get('/models/{makeyear_id}', 'CarController@model');
 
 Route::get('/features', 'FeatureController@index');
 Route::post('/features','FeatureController@store');
+
+Route::get('/autocomplete/users', 'UserController@index');
+Route::post('/autocomplete', 'UserController@show');
+Route::get('/user/{id}', 'UserController@user');
 

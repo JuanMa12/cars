@@ -2,16 +2,13 @@
 
 use Illuminate\Database\Seeder;
 
-class DatabaseSeeder extends Seeder
+class DatabaseSeeder extends \Styde\Seeder\BaseSeeder
 {
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
-    public function run()
-    {
-         $this->call(CarTableSeeder::class);
-         $this->call(FeatureTableSeeder::class);
-    }
+    protected $truncate = array(
+        'cars', 'features' , 'users'
+    );
+
+    protected $seeders = array(
+        'User' , 'Feature' , 'Car'
+    );
 }

@@ -10,36 +10,7 @@
 
 @section('scripts')
     <script>
-        $(document).ready(function(){
-            var options = {
-                url: "/autocomplete/users",
-                ajaxSettings:{
-                    dataType: "json",
-                    method: "GET",
-                    data: {}
-                },
-                preparePostData: function(data){
-                    data.term = $('#user').val();
-                    return data;
-                },
-                requestDelay: 500,
-                getValue: "name",
-                template:{
-                    type: "description",
-                    fields: {description: "email"}
-                },
-                list:{
-                    match:{enabled:true}
-                },
-                theme: "bootstrap"
-            };
-
-            $("#user").easyAutocomplete(options);
-        });
-
-
-
-        /*$(document).ready(function(){
+       $(document).ready(function(){
             var options = {
                 url: "/resources/people.json",
                 getValue: "name",
@@ -54,7 +25,6 @@
             };
 
             $("#user").easyAutocomplete(options);
-        });*/
-
+        });
     </script>
 @endsection
